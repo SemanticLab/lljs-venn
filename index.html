@@ -1,12 +1,95 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>lljs-venn</title>
-</head>
-<body>
-  <h1>lljs-venn</h1>
-  <p>Coming soon.</p>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f8f7f1" />
+    <title>Shrine communities · Linking Lost Jazz Shrines</title>
+    <link rel="icon" href="lljs-icon.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="collection.js"></script>
+    <script defer src="portraits.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="mast">
+        <img src="lljs-icon.png" alt="" width="40" height="40" /><span
+          >Linking Lost Jazz Shrines</span
+        >
+      </div>
+      <a href="https://base.semlab.io/wiki/Item:Q18807">Project in Wikibase</a>
+    </header>
+    <main>
+      <div class="intro">
+        <h1>Shrine communities</h1>
+        <p>
+          Explore the people who connect Brooklyn’s jazz shrines across five
+          communities.
+        </p>
+      </div>
+      <div class="workspace">
+        <section class="diagram" aria-labelledby="diagram-title">
+          <div class="panel-head">
+            <h2 id="diagram-title">Community overlaps</h2>
+            <span id="totals"></span>
+          </div>
+          <div class="plot">
+            <svg
+              id="venn"
+              viewBox="-298 -310 622 606"
+              aria-labelledby="diagram-title diagram-help"
+              role="group"
+            ></svg>
+          </div>
+          <p id="diagram-help">
+            Select a region to see who belongs to that exact combination. Each
+            number counts people.
+          </p>
+          <label class="region-picker"
+            >Explore by region<select id="region-select">
+              <option value="">Choose a combination</option>
+            </select></label
+          >
+          <div
+            class="key"
+            id="key"
+            aria-label="Explore whole communities"
+          ></div>
+        </section>
+        <section
+          class="directory"
+          id="directory"
+          aria-labelledby="directory-title"
+        >
+          <div class="directory-top">
+            <h2 id="directory-title">People</h2>
+            <label class="search"
+              ><svg
+                aria-hidden="true"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="10" cy="10" r="6.5" />
+                <path d="m15 15 5 5" /></svg
+              ><input
+                id="search"
+                type="search"
+                aria-label="Search all people by name"
+                placeholder="Search all people by name"
+            /></label>
+          </div>
+          <div class="result-head">
+            <div id="status" role="status"></div>
+            <button id="clear" hidden>Show all</button>
+          </div>
+          <div class="directory-body" id="results"></div>
+        </section>
+      </div>
+    </main>
+  </body>
 </html>
